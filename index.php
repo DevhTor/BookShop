@@ -1,8 +1,14 @@
-<?php include("template/header.php")?>
+<?php 
+
+include("template/header.php");
+
+define('BASE_URL', '//'. $_SERVER['SERVER_NAME'].'bookShop/');
+
+?>
    
     <div class="jumbotron">
         <h1 class="display-3">Jumbo heading</h1>
-        <p class="lead">Jumbo helper text</p>
+        <p class="lead">hola mundo</p>
         <hr class="my-2">
         <p>More info</p>
         <p class="lead">

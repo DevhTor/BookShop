@@ -4,7 +4,7 @@ session_start();
 
 if ($_POST) {
 
-  include("config/database.php");
+  include("admin/config/database.php");
 
   $username = $_POST['user'];
   $password = $_POST['password'];
@@ -14,13 +14,14 @@ if ($_POST) {
   $query->execute();
   $user = $query->fetch(PDO::FETCH_LAZY);
 
-  if(!empty($user) && $username==$user['username'] && $password==$user['password'] && $user['role']=='admin'){     
+  if(!empty($user) && $username==$user['username'] && $password==$user['password']){     
 
     $_SESSION['user']=$username;
     $_SESSION['role']=$user['role'];
-    header('location:home.php');  
+    header('location: ' .  '//' .$_SERVER['SERVER_NAME'] . '/BookShop/index.php');  
+
   }else{
-    echo '<script language="javascript">alert("Acceso No Autorizado");</script>';
+    echo '<script language="javascript">alert("Usuario o Contraseña incorrecto");</script>';
   }
 
   
@@ -80,8 +81,6 @@ if ($_POST) {
 
         </div>
       </div>
-
-
 
 
     </div>

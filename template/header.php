@@ -1,3 +1,5 @@
+<?php SESSION_START(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +24,18 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="we.php">Nosotros</a>
+            </li>
+
+            <li class="nav-item" <?php echo (isset($_SESSION['user']))? 'hidden': '';?>>
+                <a class="nav-link" href="login.php">Iniciar Sesion</a>
+            </li>
+
+            <li class="nav-item" <?php echo (!isset($_SESSION['user']))? 'hidden': '';?>>
+                <a class="nav-link" href="closeSession.php">Cerrar Sesion</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="admin/home.php">Administrar</a>
             </li>
         </ul>
 
