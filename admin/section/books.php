@@ -2,7 +2,7 @@
 
 //includes
 include("../template/header.php"); 
-include("../config/database.php");
+include("../../config/database.php");
 
 
 //variables

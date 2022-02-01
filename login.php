@@ -4,7 +4,7 @@ session_start();
 
 if ($_POST) {
 
-  include("admin/config/database.php");
+  include("config/database.php");
 
   $username = $_POST['user'];
   $password = $_POST['password'];
