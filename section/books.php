@@ -8,33 +8,29 @@ $query->execute();
 $bookList = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<br>
-<div class="container-flex bg-primary ">
-    <div class="col-6 ">
 
-        <div class="row">
-            <?php foreach($bookList as $book){ ?>
-                
-                <div class="col-4 card">
-                    <img class="card-img-top" src="../img/<?php echo $book['image'];?>" alt="" >
+ 
+
+<div class="container-flex">   
+    <div class="row ">
+        <div class="col-8 d-flex flex-wrap ">
+            <?php foreach($bookList as $book){ ?>             
+                <div class="card m-4" style="width:200px; height:350px" >
+                    <img class="card-img-top" style="height:70%" src="../img/<?php echo $book['image'];?>" alt="" >
                     <div class="card-body">
-                        <h4 class="card-title"><?php echo $book['title'];?></h4>
-                        <a name="" id="" class="btn btn-primary" href="#" role="button">ver Mas</a>
+                        <h5 class="card-title text-12"><?php echo $book['title'];?></h5>
+                        <a class="btn btn-primary" href="#" role="button">ver Mas</a>
                     </div>
                 </div>
-
-            <?php } ?>
+            <?php } ?> 
+        </div>
+        
+        <div class="col-4">
+            Carrito
         </div>
 
-        <div class="row">
-            <div class="col">
-                horizontal
-            </div>
-        </div>
-
-    </div>
-    
-    
+    </div>  
 </div>
+
 
 <?php include("../template/footer.php")?>

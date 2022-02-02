@@ -1,4 +1,10 @@
-<?php SESSION_START(); ?>
+<?php 
+
+SESSION_START(); 
+
+$urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +21,16 @@
 
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link h-white" href="index.php">BookShop</a>
+                    <a class="nav-link h-white" href="<?php echo $urlServer?>index.php">BookShop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="section/books.php">Libros</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>section/books.php">Libros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="we.php">Nosotros</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>section/we.php">Nosotros</a>
                 </li>
             </ul>
 
@@ -32,7 +38,7 @@
 
                 
                 <li class="nav-item" <?php echo (isset($_SESSION['user']))? 'hidden': '';?>>
-                    <a class="nav-link" href="login.php">Iniciar Sesion</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>section/login.php">Iniciar Sesion</a>
                 </li>
 
                 
@@ -46,7 +52,7 @@
                     <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
 
                         <li class="">
-                            <a class="dropdown-item" href="closeSession.php">Cerrar Sesion</a>
+                            <a class="dropdown-item" href="<?php echo $urlServer?>section/closeSession.php">Cerrar Sesion</a>
                         </li>
                         
                     </ul>
@@ -54,7 +60,7 @@
                 </li>
 
                 <li class="nav-item" <?php echo (!isset($_SESSION['user']))? 'hidden': '';?>>
-                    <img width="50px" src="img/avatar.png" alt="" class="nav-link rounded-pill">
+                    <img width="50px" src="<?php echo $urlServer?>img/avatar.png" alt="" class="nav-link rounded-pill">
                 </li>
 
                 

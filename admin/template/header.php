@@ -2,9 +2,10 @@
 
 SESSION_START();
 
+$urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
 
 if(!isset($_SESSION['user']) || $_SESSION['role']!='admin'){
-    header('location: ' .  '//' .$_SERVER['SERVER_NAME'] . '/BookShop/admin/index.php');
+    header('location: ' .  $urlServer . 'admin/index.php');
     
 }
 
@@ -27,16 +28,16 @@ if(!isset($_SESSION['user']) || $_SESSION['role']!='admin'){
     <?php 
 
     
-    $url="http://" . $_SERVER['HTTP_HOST'] . "/BookShop";
+    
     
     ?>
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="nav navbar-nav">
-            <a class="nav-item nav-link active" href="<?php echo $url;?>/admin/home.php">Administrador <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="<?php echo $url;?>/admin/home.php">Home</a>
-            <a class="nav-item nav-link" href="<?php echo $url;?>/admin/section/books.php">Libros</a>
-            <a class="nav-item nav-link" href="<?php echo $url;?>/admin/section/closeSession.php">Cerrar Sesion</a>
-            <a class="nav-item nav-link" href="<?php echo $url;?>">Ver Sitio Web</a>
+            <a class="nav-item nav-link active" href="<?php echo $urlServer;?>admin/home.php">Administrador <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="<?php echo $urlServer;?>admin/home.php">Home</a>
+            <a class="nav-item nav-link" href="<?php echo $urlServer;?>admin/section/books.php">Libros</a>
+            <a class="nav-item nav-link" href="<?php echo $urlServer;?>admin/section/closeSession.php">Cerrar Sesion</a>
+            <a class="nav-item nav-link" href="<?php echo $urlServer;?>">Ver Sitio Web</a>
         </div>
         </div>
     </nav>
