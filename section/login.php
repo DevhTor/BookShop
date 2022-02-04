@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
+$urlServer = '//' . $_SERVER['SERVER_NAME'];
 
 if ($_POST) {
 
@@ -19,7 +19,7 @@ if ($_POST) {
 
     $_SESSION['user']=$username;
     $_SESSION['role']=$user['role'];
-    header('location: ' .  $urlServer . 'index.php');  
+    header('location: ' .  $urlServer . '/index.php');  
 
   }else{
     echo '<script language="javascript">alert("Usuario o Contraseña incorrecto");</script>';
