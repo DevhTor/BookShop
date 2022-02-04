@@ -32,6 +32,9 @@ $urlServer = '//' . $_SERVER['SERVER_NAME'];
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $urlServer?>/section/we.php">Nosotros</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $urlServer?>/admin/home.php">Administrador</a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav">
