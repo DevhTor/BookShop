@@ -2,7 +2,7 @@
 
 SESSION_START(); 
 
-$urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
+$urlServer = '//' . $_SERVER['SERVER_NAME'];
 
 ?>
 
@@ -21,16 +21,16 @@ $urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
 
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link h-white" href="<?php echo $urlServer?>index.php">BookShop</a>
+                    <a class="nav-link h-white" href="<?php echo $urlServer?>/index.php">BookShop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $urlServer?>index.php">Inicio</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>/index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $urlServer?>section/books.php">Libros</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>/section/books.php">Libros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $urlServer?>section/we.php">Nosotros</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>/section/we.php">Nosotros</a>
                 </li>
             </ul>
 
@@ -38,7 +38,7 @@ $urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
 
                 
                 <li class="nav-item" <?php echo (isset($_SESSION['user']))? 'hidden': '';?>>
-                    <a class="nav-link" href="<?php echo $urlServer?>section/login.php">Iniciar Sesion</a>
+                    <a class="nav-link" href="<?php echo $urlServer?>/section/login.php">Iniciar Sesion</a>
                 </li>
 
                 
@@ -52,7 +52,7 @@ $urlServer = '//' . $_SERVER['SERVER_NAME'] . '/BookShop/';
                     <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
 
                         <li class="">
-                            <a class="dropdown-item" href="<?php echo $urlServer?>section/closeSession.php">Cerrar Sesion</a>
+                            <a class="dropdown-item" href="<?php echo $urlServer?>/section/closeSession.php">Cerrar Sesion</a>
                         </li>
                         
                     </ul>
