@@ -8,11 +8,16 @@ include("../../config/database.php");
 //variables
 $txtId = (isset($_POST['txtId']) ? $_POST['txtId'] : "");
 $txtTitle = (isset($_POST['txtTitle']) ? $_POST['txtTitle'] : "");
+$txtAuthor = (isset($_POST['txtAuthor']) ? $_POST['txtAuthor'] : "");
+$txtPrice = (isset($_POST['txtPrice']) ? $_POST['txtPrice'] : "");
+$txtCategory = (isset($_POST['txtCategory']) ? $_POST['txtCategory'] : "");
+$txtRating = (isset($_POST['txtRating']) ? $_POST['txtRating'] : "");
+$txtPublicationDate = (isset($_POST['txtPublicationDate']) ? $_POST['txtPublicationDate'] : "");
 $txtImage = (isset($_FILES['txtImage']['name']) ? $_FILES['txtImage']['name'] : "");
 $btnAction = (isset($_POST['btnAction']) ? $_POST['btnAction'] : "");
 
 
-//table
+//tableX
 
 $query = $conn->prepare('SELECT * FROM books');
 $query->execute();
@@ -22,8 +27,16 @@ $bookList = $query->fetchAll(PDO::FETCH_ASSOC);
 //CRUD
 switch ($btnAction) {
     case 'add':
-        $query = $conn->prepare("INSERT INTO books (title, image) VALUES (:title, :image)");
+        $query = $conn->prepare
+            ("INSERT INTO books (title, author, image, price, category, publicationDate, rating) 
+            VALUES (:title, :author, :image, :price, :category, :publicationDate, :rating)");
+
         $query->bindParam(':title', $txtTitle);
+        $query->bindParam(':author', $txtAuthor);
+        $query->bindParam(':price', $txtPrice);
+        $query->bindParam(':category', $txtCategory);
+        $query->bindParam(':publicationDate', $txtPublicationDate);
+        $query->bindParam(':rating', $txtRating);
 
         $date = new DateTime();
         $fileName = ($txtImage!="") ? $date->getTimestamp() . "_" . $_FILES['txtImage']['name']: "image.jpg";
@@ -133,7 +146,7 @@ switch ($btnAction) {
 ?>
 
 
-<!----------------------- HTML FORM-------------------------------->
+<!----------------------- Book Card-------------------------------->
 
 <div class="col-md-4">
 
@@ -143,24 +156,50 @@ switch ($btnAction) {
         </div>
         <div class="card-body">
             <form method="POST" enctype="multipart/form-data">
-                <div class="form-group">
+                <div class="form-group pb-2">
                     <label>Id</label>
                     <input type="text" value="<?php echo $txtId;?>" required readonly class="form-control" name="txtId" placeholder="Id">
                 </div>
-                <div class="form-group">
+                <div class="form-group pb-2">
                     <label>Titulo</label>
                     <input type="text" value="<?php echo $txtTitle;?>" required class="form-control" name="txtTitle" placeholder="titulo">
                 </div>
-
-                <div class="form-group">
-                    
-
+                <div class="form-group pb-2">
+                    <label>Autor</label>
+                    <input type="text" value="<?php echo $txtAuthor;?>" required class="form-control" name="txtAuthor" placeholder="autor">
+                </div>
+                <div class="form-group pb-2">
+                    <label>Precio</label>
+                    <input type="number" step="any" min="0" value="<?php echo $txtPrice;?>" required class="form-control" name="txtPrice" placeholder="precio">
+                </div>
+                <div class="form-group pb-2">
+                    <label>Categoria</label>
+                    <input type="text" value="<?php echo $txtCategory;?>" required class="form-control" name="txtCategory" placeholder="Categoria">
+                </div>
+                <div class="form-group pb-4">
+                    <label>Año De Publicacion</label>
+                    <input type="date" value="<?php echo $txtPublicationDate;?>" required class="form-control" name="txtPublicationDate" min="01-01-01" max="01-01-2050">
+                </div>
+                <div class="form-group pb-2">
+                    <label>Rating</label>
+                    <select name="txtRating" id="txtRating" value="<?php echo $txtPublicationDate;?>">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <span class="fa fa-star checked" id="star1"></span>
+                    <span class="fa fa-star" id="star2"></span>
+                    <span class="fa fa-star" id="star3"></span>
+                    <span class="fa fa-star" id="star4"></span>
+                    <span class="fa fa-star" id="star5"></span>
+                </div>
+                <div class="form-group pb-2">
                     <img src="../../img/<?php echo $txtImage;?>" width="50" alt="">
-
-
                     <input type="file" class="form-control" name="txtImage">
                 </div>
-
+                
                 <div class="btn-group" role="group" aria-label="">
                     <button type="submit" name="btnAction" value="add" class="btn btn-success" <?php echo ($btnAction=="seleccionar")? "disabled" : "" ?>>Agregar</button>
                     <button type="submit" name="btnAction" value="modify" class="btn btn-warning" <?php echo ($btnAction!="seleccionar")? "disabled" : "" ?>>Modificar</button>
@@ -173,9 +212,7 @@ switch ($btnAction) {
 </div>
 
 
-<!----------------------- HTML TABLE-------------------------------->
-
-
+<!----------------------- Book table -------------------------------->
 
 <div class="col-md-8">
 
@@ -211,6 +248,52 @@ switch ($btnAction) {
         </tbody>
     </table>
 </div>
+
+<!-- 
+    var elemento = document.getElementById("images");
+    elemento.className += " col-md-6"; 
+-->
+<!----------------------- javaScript -------------------------------->
+<script type="text/javascript">
+    const selectElement = document.getElementById('txtRating');
+    const star1 = document.getElementById('star1');
+    const star2 = document.getElementById('star2');
+    const star3 = document.getElementById('star3');
+    const star4 = document.getElementById('star4');
+    const star5 = document.getElementById('star5');
+    
+    selectElement.addEventListener('change', (event) => {
+    
+        var rating = parseInt(event.target.value);
+
+        if(rating >= 2){
+            star2.className += "fa fa-star checked";
+        }else{
+            star2.className += "fa fa-star"
+        }
+
+        if(rating >= 3){
+            star3.className += "fa fa-star checked";
+        }else{
+            star3.className += "fa fa-star"
+        }
+       
+        if(rating >= 4){
+            star4.className += "fa fa-star checked";
+        }else{
+            star4.className += "fa fa-star"
+        }
+
+        if(rating >= 5){
+            star5.className += "fa fa-star checked";
+        }else{
+            star5.className += "fa fa-star"
+        }
+
+        
+    });
+</script>
+
 
 
 <?php include("../template/footer.php"); ?>
