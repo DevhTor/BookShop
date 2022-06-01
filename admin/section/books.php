@@ -182,18 +182,18 @@ switch ($btnAction) {
                 </div>
                 <div class="form-group pb-2">
                     <label>Rating</label>
-                    <select name="txtRating" id="txtRating" value="<?php echo $txtPublicationDate;?>">
+                    <select name="txtRating" id="txtRating"?>">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <span class="fa fa-star checked" id="star1"></span>
-                    <span class="fa fa-star" id="star2"></span>
-                    <span class="fa fa-star" id="star3"></span>
-                    <span class="fa fa-star" id="star4"></span>
-                    <span class="fa fa-star" id="star5"></span>
+                    
+                    <?php include("../../complements/rating.php"); ?>
+
+                    <script src="../../script/rating.js"></script>
+
                 </div>
                 <div class="form-group pb-2">
                     <img src="../../img/<?php echo $txtImage;?>" width="50" alt="">
@@ -249,50 +249,8 @@ switch ($btnAction) {
     </table>
 </div>
 
-<!-- 
-    var elemento = document.getElementById("images");
-    elemento.className += " col-md-6"; 
--->
-<!----------------------- javaScript -------------------------------->
-<script type="text/javascript">
-    const selectElement = document.getElementById('txtRating');
-    const star1 = document.getElementById('star1');
-    const star2 = document.getElementById('star2');
-    const star3 = document.getElementById('star3');
-    const star4 = document.getElementById('star4');
-    const star5 = document.getElementById('star5');
-    
-    selectElement.addEventListener('change', (event) => {
-    
-        var rating = parseInt(event.target.value);
 
-        if(rating >= 2){
-            star2.className += "fa fa-star checked";
-        }else{
-            star2.className += "fa fa-star"
-        }
 
-        if(rating >= 3){
-            star3.className += "fa fa-star checked";
-        }else{
-            star3.className += "fa fa-star"
-        }
-       
-        if(rating >= 4){
-            star4.className += "fa fa-star checked";
-        }else{
-            star4.className += "fa fa-star"
-        }
-
-        if(rating >= 5){
-            star5.className += "fa fa-star checked";
-        }else{
-            star5.className += "fa fa-star"
-        }
-
-        
-    });
-</script>
 
 
 
