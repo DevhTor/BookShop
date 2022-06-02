@@ -32,6 +32,7 @@ selectElement.addEventListener('change', (event) => {
     }else{
         star5.className += "fa fa-star"
     }
-
         
 });
+
+//
