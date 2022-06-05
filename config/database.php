@@ -5,7 +5,7 @@ $dbName = "bookshopDb";
 $dbUser = "root";
 $dbPass = "";
 
-$dbMode = "local";
+$dbMode = "remote";
 
 if($dbMode == "remote"){
 
