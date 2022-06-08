@@ -13,6 +13,7 @@ if($dbMode == "remote"){
     $dbName = "bdmnt4lojlwmhmh84sde";
     $dbUser = "u6vfjlrvzxku2itk";
     $dbPass = "INrp9Hw0vOOgd77X6w9Z";
+    echo  "conectado remoto";
 }
 
 try {
