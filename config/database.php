@@ -42,6 +42,8 @@ function CreateTableBooks($conn, $dbName){
         )");
 
         $query->execute();
+        
+        BooksMockData($conn);
 
     }
 }
@@ -85,9 +87,29 @@ function UsersMockData($conn){
 
     $query->execute();
 
-    $query = $conn->prepare("INSERT INTO users (username, name, email, password, role) 
+   $query = $conn->prepare("INSERT INTO users (username, name, email, password, role) 
         VALUES ('meleno', 'meleno', 'meleno@gmail.com', '123456', 'user')");
         
+}
+
+function BooksMockData($conn){
+ 
+  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) VALUES ("Php Basico", "Fulano De Tal", "php.jpg", "programacion", "19-08-1996", "5")");
+ 
+  $query->execute();
+ 
+  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) VALUES("Node Js", "Meleno Torres", "Nodejs.jpg", "Programacion", "05-06-2005", "4")");
+  
+  $query->execute();
+  
+  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) VALUES ("Java Course", "Mirita Barata", "java.jpg", "Programacion", "09-09-2008", "5")");
+   
+  $query->execute();
+   
+  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) VALUES ("Html Course", "Perencejo Pendejo", "html.jpg", "Programacion", "23-05-1990", "3")");
+    
+  $query->execute();
+ 
 }
 
 ?>
