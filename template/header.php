@@ -2,8 +2,6 @@
 
 SESSION_START(); 
 
-$urlServer = '//' . $_SERVER['SERVER_NAME']. '/';
-
 ?>
 
 <!DOCTYPE html>
@@ -21,19 +19,19 @@ $urlServer = '//' . $_SERVER['SERVER_NAME']. '/';
 
             <ul class="nav navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="<?php echo $urlServer?>/index.php">BookShop</a>
+                    <a class="nav-link text-white " href="<?php echo BASE_URL?>/index.php">BookShop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?php echo $urlServer?>/index.php">Inicio</a>
+                    <a class="nav-link text-white" href="<?php echo BASE_URL?>/index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?php echo $urlServer?>/section/books.php">Libros</a>
+                    <a class="nav-link text-white" href="<?php echo BASE_URL?>/section/books.php">Libros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?php echo $urlServer?>/section/we.php">Nosotros</a>
+                    <a class="nav-link text-white" href="<?php echo BASE_URL?>/section/we.php">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?php echo $urlServer?>/admin/home.php">Administrador</a>
+                    <a class="nav-link text-white" href="<?php echo BASE_URL?>/admin/home.php">Administrador</a>
                 </li>
             </ul>
 
