@@ -2,7 +2,7 @@
 
 SESSION_START(); 
 
-$urlServer = '//' . $_SERVER['SERVER_NAME'];
+$urlServer = '//' . $_SERVER['SERVER_NAME']. '/';
 
 ?>
 
