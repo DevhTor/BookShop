@@ -103,7 +103,7 @@ function BooksMockData($conn)
   $query->execute();
 
   $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
-  VALUES('Node Js', 'Meleno Torres', '200.75', 'Nodejs.jpg', 'Programacion', '1970-04-02', '4')");
+  VALUES('Node Js', 'Meleno Torres', '200.75', 'nodejs.jpg', 'Programacion', '1970-04-02', '4')");
 
   $query->execute();
 
