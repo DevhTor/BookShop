@@ -35,6 +35,7 @@ function CreateTableBooks($conn, $dbName){
         id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         title varchar(100) NOT NULL,
         author varchar(100) NOT NULL,
+        price NUMERIC(10,2) NOT NULL,
         image varchar(100) NOT NULL,
         category varchar(100) NOT NULL,
         publication_date date NOT NULL,
@@ -96,23 +97,23 @@ function UsersMockData($conn){
 
 function BooksMockData($conn){
  
-  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES ('Php Basico', 'Fulano De Tal', 'php.jpg', 'programacion', '1996-05-02', '5')");	
+  $query = $conn->prepare("INSERT INTO books(title, author, price, image, category, publication_date, rating) 
+  VALUES ('Php Basico', 'Fulano De Tal', '200.75', 'php.jpg', 'programacion', '1996-05-02', '5')");	
  
   $query->execute();
  
-  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES('Node Js', 'Meleno Torres', 'Nodejs.jpg', 'Programacion', '1970-04-02', '4')");	
+  $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
+  VALUES('Node Js', 'Meleno Torres', '200.75', 'Nodejs.jpg', 'Programacion', '1970-04-02', '4')");	
   
   $query->execute();
   
-  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES ('Java Course', 'Mirita Barata', 'java.jpg', 'Programacion', '1999-03-02', '5')");
+  $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
+  VALUES ('Java Course', 'Mirita Barata', '200.75', 'java.jpg', 'Programacion', '1999-03-02', '5')");
    
   $query->execute();
    
-  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES ('Html Course', 'Perencejo Pendejo', 'html.jpg', 'Programacion', '2000-07-06', '3')");
+  $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
+  VALUES ('Html Course', 'Perencejo Pendejo', '200.75', 'html.jpg', 'Programacion', '2000-07-06', '3')");
     
   $query->execute();
  
