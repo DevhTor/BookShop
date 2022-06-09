@@ -39,7 +39,7 @@ SESSION_START();
 
                 
                 <li class="nav-item" <?php echo (isset($_SESSION['user']))? 'hidden': '';?>>
-                    <a class="nav-link text-white" href="<?php echo $urlServer?>/section/login.php">Iniciar Sesion</a>
+                    <a class="nav-link text-white" href="<?php echo BASE_URL?>/section/login.php">Iniciar Sesion</a>
                 </li>
 
                 
@@ -53,7 +53,7 @@ SESSION_START();
                     <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
 
                         <li class="">
-                            <a class="dropdown-item" href="<?php echo $urlServer?>/section/closeSession.php">Cerrar Sesion</a>
+                            <a class="dropdown-item" href="<?php echo BASE_URL?>/section/closeSession.php">Cerrar Sesion</a>
                         </li>
                         
                     </ul>
@@ -61,7 +61,7 @@ SESSION_START();
                 </li>
 
                 <li class="nav-item" <?php echo (!isset($_SESSION['user']))? 'hidden': '';?>>
-                    <img width="50px" src="<?php echo $urlServer?>img/avatar.png" alt="" class="nav-link rounded-pill">
+                    <img width="50px" src="<?php echo BASE_URL?>img/avatar.png" alt="" class="nav-link rounded-pill">
                 </li>
 
                 
@@ -70,7 +70,9 @@ SESSION_START();
         </nav>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+            crossorigin="anonymous"></script>
     </body>
 
 </html>
