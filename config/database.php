@@ -103,17 +103,17 @@ function BooksMockData($conn)
   $query->execute();
 
   $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
-  VALUES('Node Js', 'Meleno Torres', '200.75', 'nodejs.jpg', 'Programacion', '1970-04-02', '4')");
-
-  $query->execute();
-
-  $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
   VALUES ('Java Course', 'Mirita Barata', '200.75', 'java.jpg', 'Programacion', '1999-03-02', '5')");
 
   $query->execute();
 
   $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
   VALUES ('Html Course', 'Perencejo Pendejo', '200.75', 'html.jpg', 'Programacion', '2000-07-06', '3')");
+
+  $query->execute();
+  
+  $query = $conn->prepare("INSERT INTO books(title, author,  price, image, category, publication_date, rating) 
+  VALUES('Node Js', 'Meleno Torres', '200.75', 'nodejs.jpg', 'Programacion', '1970-04-02', '4')");
 
   $query->execute();
 }
