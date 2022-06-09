@@ -2,6 +2,8 @@
 
 SESSION_START(); 
 
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . '/');
+
 ?>
 
 <!DOCTYPE html>

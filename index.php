@@ -3,7 +3,7 @@
 include("template/header.php");
 include("config/database.php");
 
-define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . '/');
+
 
 
 $query = $conn->prepare("SELECT * FROM books where rating > 4");
