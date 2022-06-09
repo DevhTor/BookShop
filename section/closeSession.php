@@ -5,5 +5,3 @@ session_destroy();
 
 
 header('location: ' .  '//' .$_SERVER['SERVER_NAME']);
-
-?>

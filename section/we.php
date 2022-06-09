@@ -9,4 +9,4 @@ include("../template/header.php");
 
 we
 
-<?php include("../template/footer.php");?>
+<?php include("../template/footer.php"); ?>

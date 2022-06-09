@@ -14,16 +14,14 @@ if ($_POST) {
   $query->execute();
   $user = $query->fetch(PDO::FETCH_LAZY);
 
-  if(!empty($user) && $username==$user['username'] && $password==$user['password'] && $user['role']=='admin'){     
+  if (!empty($user) && $username == $user['username'] && $password == $user['password'] && $user['role'] == 'admin') {
 
-    $_SESSION['user']=$username;
-    $_SESSION['role']=$user['role'];
-    header('location:home.php');  
-  }else{
+    $_SESSION['user'] = $username;
+    $_SESSION['role'] = $user['role'];
+    header('location:home.php');
+  } else {
     echo '<script language="javascript">alert("Acceso No Autorizado");</script>';
   }
-
-  
 }
 
 ?>

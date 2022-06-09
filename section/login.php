@@ -15,17 +15,14 @@ if ($_POST) {
   $query->execute();
   $user = $query->fetch(PDO::FETCH_LAZY);
 
-  if(!empty($user) && $username==$user['username'] && $password==$user['password']){     
+  if (!empty($user) && $username == $user['username'] && $password == $user['password']) {
 
-    $_SESSION['user']=$username;
-    $_SESSION['role']=$user['role'];
-    header('location: ' .  $urlServer . '/index.php');  
-
-  }else{
+    $_SESSION['user'] = $username;
+    $_SESSION['role'] = $user['role'];
+    header('location: ' .  $urlServer . '/index.php');
+  } else {
     echo '<script language="javascript">alert("Usuario o Contraseña incorrecto");</script>';
   }
-
-  
 }
 
 ?>
