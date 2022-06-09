@@ -114,6 +114,10 @@ switch ($btnAction) {
     $txtId = $book['id'];
     $txtTitle = $book['title'];
     $txtImage = $book['image'];
+    $txtPrice = $book['price'];
+    $txtRating = $book['rating'];
+    $txtAuthor = $book['author'];
+    
 
 
     break;
