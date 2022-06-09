@@ -13,7 +13,6 @@ if($dbMode == "remote"){
     $dbName = "bdmnt4lojlwmhmh84sde";
     $dbUser = "u6vfjlrvzxku2itk";
     $dbPass = "INrp9Hw0vOOgd77X6w9Z";
-    echo  "conectado remoto";
 }
 
 try {
@@ -90,28 +89,30 @@ function UsersMockData($conn){
 
    $query = $conn->prepare("INSERT INTO users (username, name, email, password, role) 
         VALUES ('meleno', 'meleno', 'meleno@gmail.com', '123456', 'user')");
+    
+    $query->execute();
         
 }
 
 function BooksMockData($conn){
  
   $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES ('Php Basico', 'Fulano De Tal', 'php.jpg', 'programacion', '19-08-1996', '5')");	
+  VALUES ('Php Basico', 'Fulano De Tal', 'php.jpg', 'programacion', '1996-05-02', '5')");	
  
   $query->execute();
  
-  $query = $conn->prepare('"INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES("Node Js", "Meleno Torres", "Nodejs.jpg", "Programacion", "05-06-2005", "4")');
+  $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
+  VALUES('Node Js', 'Meleno Torres', 'Nodejs.jpg', 'Programacion', '1970-04-02', '4')");	
   
   $query->execute();
   
   $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES ('Java Course', 'Mirita Barata', 'java.jpg', 'Programacion', '09-09-2008', '5')");
+  VALUES ('Java Course', 'Mirita Barata', 'java.jpg', 'Programacion', '1999-03-02', '5')");
    
   $query->execute();
    
   $query = $conn->prepare("INSERT INTO books(title, author, image, category, publication_date, rating) 
-  VALUES ('Html Course', 'Perencejo Pendejo', 'html.jpg', 'Programacion', '23-05-1990', '3')");
+  VALUES ('Html Course', 'Perencejo Pendejo', 'html.jpg', 'Programacion', '2000-07-06', '3')");
     
   $query->execute();
  
