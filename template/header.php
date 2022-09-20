@@ -2,6 +2,8 @@
 
 SESSION_START();
 
+
+//Url Base
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . '/');
 
 ?>
