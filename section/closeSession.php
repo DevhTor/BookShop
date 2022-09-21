@@ -3,5 +3,6 @@
 SESSION_START();
 session_destroy();
 
+include("../config/server.php");
 
-header('location: ' .  '//' .$_SERVER['SERVER_NAME']);
+header('location: ' . $urlServer);
