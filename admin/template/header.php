@@ -36,7 +36,7 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] != 'admin') {
       <a class="nav-item nav-link" href="<?php echo $urlServer; ?>/admin/home.php">Home</a>
       <a class="nav-item nav-link" href="<?php echo $urlServer; ?>/admin/section/books.php">Libros</a>
       <a class="nav-item nav-link" href="<?php echo $urlServer; ?>/admin/section/closeSession.php">Cerrar Sesion</a>
-      <a class="nav-item nav-link" href="<?php echo $urlServer; ?>">Ver Sitio Web</a>
+      <a class="nav-item nav-link" href="<?php echo $urlServer; ?>/index.php">Ver Sitio Web</a>
     </div>
     </div>
   </nav>
