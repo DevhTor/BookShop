@@ -27,7 +27,7 @@ $bookList = $query->fetchAll(PDO::FETCH_ASSOC);
 //CRUD
 switch ($btnAction) {
   case 'add':
-    $query = $conn->prepare("INSERT INTO books (title, author, image, price, category, publicationDate, rating) 
+    $query = $conn->prepare("INSERT INTO books (title, author, image, price, category, publication_date, rating) 
             VALUES (:title, :author, :image, :price, :category, :publicationDate, :rating)");
 
     $query->bindParam(':title', $txtTitle);

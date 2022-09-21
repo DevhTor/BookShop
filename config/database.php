@@ -5,9 +5,7 @@ $dbName = "bookshopDb";
 $dbUser = "root";
 $dbPass = "";
 
-$dbMode = "remote";
-
-if ($dbMode == "remote") {
+if ($_SERVER['SERVER_NAME'] != "localhost") {
 
   $dbHost = "bdmnt4lojlwmhmh84sde-mysql.services.clever-cloud.com";
   $dbName = "bdmnt4lojlwmhmh84sde";

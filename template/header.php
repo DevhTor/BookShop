@@ -1,19 +1,4 @@
-<?php
-
-SESSION_START();
-
-
-//Url Base
-
-$port = "";
-if($_SERVER['SERVER_NAME'] == "localhost")
-{
-	$port = ":8000";
-
-}
-define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] .$port. '/');
-
-?>
+<?php include("../config/Server.php") ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,19 +17,19 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] .$port. '/');
 
     <ul class="nav navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link text-white " href="<?php echo BASE_URL ?>/index.php">BookShop</a>
+        <a class="nav-link text-white " href="<?php echo $urlBase ?>/index.php">BookShop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="<?php echo BASE_URL ?>/index.php">Inicio</a>
+        <a class="nav-link text-white" href="<?php echo $urlBase ?>/index.php">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="<?php echo BASE_URL ?>/section/books.php">Libros</a>
+        <a class="nav-link text-white" href="<?php echo $urlBase ?>/section/books.php">Libros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="<?php echo BASE_URL ?>/section/we.php">Nosotros</a>
+        <a class="nav-link text-white" href="<?php echo $urlBase ?>/section/we.php">Nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="<?php echo BASE_URL ?>/admin/home.php">Administrador</a>
+        <a class="nav-link text-white" href="<?php echo $urlBase ?>/admin/home.php">Administrador</a>
       </li>
     </ul>
 
@@ -52,7 +37,7 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] .$port. '/');
 
 
       <li class="nav-item" <?php echo (isset($_SESSION['user'])) ? 'hidden' : ''; ?>>
-        <a class="nav-link text-white" href="<?php echo BASE_URL ?>/section/login.php">Iniciar Sesion</a>
+        <a class="nav-link text-white" href="<?php echo $urlBase ?>/section/login.php">Iniciar Sesion</a>
       </li>
 
 
@@ -66,7 +51,7 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] .$port. '/');
         <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
 
           <li class="">
-            <a class="dropdown-item" href="<?php echo BASE_URL ?>/section/closeSession.php">Cerrar Sesion</a>
+            <a class="dropdown-item" href="<?php echo $urlBase ?>/section/closeSession.php">Cerrar Sesion</a>
           </li>
 
         </ul>
@@ -74,7 +59,7 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] .$port. '/');
       </li>
 
       <li class="nav-item" <?php echo (!isset($_SESSION['user'])) ? 'hidden' : ''; ?>>
-        <img width="50px" src="<?php echo BASE_URL ?>img/avatar.png" alt="" class="nav-link rounded-pill">
+        <img width="50px" src="<?php echo $urlBase ?>img/avatar.png" alt="" class="nav-link rounded-pill">
       </li>
 
 
