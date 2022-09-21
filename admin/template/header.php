@@ -1,5 +1,5 @@
 <?php
-
+SESSION_START();
 include("../../config/Server.php");
 
 if (!isset($_SESSION['user']) || $_SESSION['role'] != 'admin') {
