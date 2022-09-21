@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-$urlServer = '//' . $_SERVER['SERVER_NAME'];
+
+include("../config/server.php");
 
 if ($_POST) {
 
