@@ -1,4 +1,8 @@
-<?php include("../config/Server.php") ?>
+<?php 
+SESSION_START();
+include("../config/Server.php") 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

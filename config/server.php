@@ -1,7 +1,4 @@
 <?php
-
-SESSION_START();
-
 //Url Base
 
 $port = "";
