@@ -150,7 +150,8 @@ switch ($btnAction) {
 
 
 <!----------------------- Book Card-------------------------------->
-
+<div class="container-flex">
+<div class="row">
 <div class="col-sm-6 col-md-5">
 
   <div class="card">
@@ -251,7 +252,8 @@ switch ($btnAction) {
     </tbody>
   </table>
 </div>
-
+</div>
+</div>
 
 
 
