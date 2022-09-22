@@ -151,7 +151,7 @@ switch ($btnAction) {
 
 <!----------------------- Book Card-------------------------------->
 
-<div class="col-md-4">
+<div class="col-sm-4 col-md-5 col-lg-3">
 
   <div class="card">
     <div class="card-header">
@@ -217,7 +217,7 @@ switch ($btnAction) {
 
 <!----------------------- Book table -------------------------------->
 
-<div class="col-md-8">
+<div class="col-sm-8 col-md-7 col-lg-3">
 
   <table class="table bordered">
     <thead>

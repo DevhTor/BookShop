@@ -20,9 +20,10 @@ $bookList = $query->fetchAll(PDO::FETCH_ASSOC);
 
   <div class="container-flex">
     <div class="row">
-      <div class="col-8 d-flex">
-        <?php foreach ($bookList as $book) { ?>
-          <div class="card m-4" style="width:200px; height:350px">
+     
+     <?php foreach ($bookList as $book) { ?>
+			<div class="col-sm-6 col-md-4  col-lg-3 d-flex">
+          <div class="card  m-4" style="width:10em; height:20em">
             <img class="card-img-top" style="height:70%" src="img/<?php echo $book['image']; ?>" alt="">
             <div class="card-body">
               <?php include("complements/rating.php"); ?>
@@ -30,8 +31,9 @@ $bookList = $query->fetchAll(PDO::FETCH_ASSOC);
               <a class="btn btn-primary" href="#" role="button">ver Mas</a>
             </div>
           </div>
-        <?php } ?>
-      </div>
+			</div>
+     <?php } ?>
+      
     </div>
 
   </div>
