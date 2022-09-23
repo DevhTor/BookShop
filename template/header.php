@@ -20,12 +20,12 @@ include("../config/Server.php")
   <body>
     <nav class=" navbar navbar-expand-md navbar-light bg-primary">
       <div class="container-fluid">
-        <button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class=" navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link text-white " href="<?php echo $urlBase ?>/index.php">BookShop</a>
             </li>
