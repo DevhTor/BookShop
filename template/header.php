@@ -17,9 +17,14 @@ include("../config/Server.php")
 </head>
 
 <body>
-  <nav class="container-fluid navbar navbar-expand navbar-light bg-primary justify-content-between">
-
-    <ul class="nav navbar-nav ">
+  <nav class=" navbar navbar-expand-md navbar-light bg-primary">
+		<button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse" id="menu">
+		
+    <ul class=" navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link text-white " href="<?php echo $urlBase ?>/index.php">BookShop</a>
       </li>
@@ -36,6 +41,7 @@ include("../config/Server.php")
         <a class="nav-link text-white" href="<?php echo $urlBase ?>/admin/home.php">Administrador</a>
       </li>
     </ul>
+</div>
 
     <ul class="nav navbar-nav">
 
