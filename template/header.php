@@ -66,6 +66,6 @@ include("../config/Server.php")
       </div>
     </nav>
 
-		<script src="../scrist/bootstrap.js"></script>
+		<script src="../script/bootstrap.js"></script>
   </body>
 </html>
