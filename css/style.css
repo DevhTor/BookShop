@@ -1,3 +1,9 @@
 .checked {
     color : orange;
 }
+
+.navi{
+	display: flex;
+	flex-direction: column;
+
+	}
