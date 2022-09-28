@@ -1068,3 +1068,8 @@
 ::1 - - [28/Sep/2022:09:44:11 -0400] "GET /css/style.css HTTP/1.1" 304 -
 ::1 - - [28/Sep/2022:10:13:52 -0400] "GET //index.php HTTP/1.1" 200 5886
 ::1 - - [28/Sep/2022:10:13:52 -0400] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Sep/2022:10:37:50 -0400] "GET //index.php HTTP/1.1" 200 5886
+::1 - - [28/Sep/2022:10:37:50 -0400] "GET /css/style.css HTTP/1.1" 200 215
+::1 - - [28/Sep/2022:10:37:50 -0400] "GET /script/script.js HTTP/1.1" 304 -
+::1 - - [28/Sep/2022:10:38:43 -0400] "GET //index.php HTTP/1.1" 200 5886
+::1 - - [28/Sep/2022:10:38:43 -0400] "GET /css/style.css HTTP/1.1" 304 -
