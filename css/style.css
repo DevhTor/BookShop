@@ -2,8 +2,18 @@
     color : orange;
 }
 
-.navi{
-	display: flex;
-	flex-direction: column;
-
+@media (max-width:765px){
+	
+	.right-menu-2 {
+		display:none !important;
+	
 	}
+}
+
+@media (min-width:765px){
+	
+	.right-menu-1 {
+		display:none !important;
+	
+	}
+}
