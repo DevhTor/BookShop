@@ -8,12 +8,22 @@
 		display:none !important;
 	
 	}
+	
+		.right-menu-1 {
+		display:flex !important;
+	
+	}
 }
 
 @media (min-width:765px){
 	
 	.right-menu-1 {
 		display:none !important;
+	
+	}
+	
+		.right-menu-2 {
+		display:flex !important;
 	
 	}
 }
